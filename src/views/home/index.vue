@@ -6,8 +6,8 @@
 <template>
     <div class="home">
         <el-menu :default-active="state.activeIndex2" :router="true" class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" @select="handleSelect">
+            <el-menu-item index="chatRoom" route="/chatRoom">聊天室</el-menu-item>
             <el-menu-item index="three" route="/three">模型</el-menu-item>
-            <el-menu-item index="2" route="/login">模型11</el-menu-item>
             <!-- <el-sub-menu index="2">
                 <template #title>Workspace</template>
                 <el-menu-item index="2-1">item one</el-menu-item>
@@ -39,7 +39,7 @@ export default {
     setup(props, { emit, slots, attrs }) {
         const state = reactive({
             three: null,
-            activeIndex2: "three",
+            activeIndex2: "chatRoom",
             // lowerCaseUsername: computed(() => state.username.toLowerCase()), //计算属性
         })
         const { ctx } = getCurrentInstance();
