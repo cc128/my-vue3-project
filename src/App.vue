@@ -15,7 +15,7 @@ export default {
         }
     },
     setup(props, { emit, slots, attrs }) {
-        let socket = io.connect("http://192.168.1.3:7005");
+        window.socket = io.connect("http://192.168.1.5:7005");
         let socketId;
         let nserName;
         let userKey;
