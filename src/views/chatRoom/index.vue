@@ -46,7 +46,7 @@ export default {
             // lowerCaseUsername: computed(() => state.username.toLowerCase()), //计算属性
         })
         onMounted(() => {
-            console.log(ctx)
+            // console.log(ctx)
         });
         // 组件销毁前
         onBeforeUnmount(() => {
@@ -59,6 +59,7 @@ export default {
                 nserName: localStorage.getItem("nserName"),
                 userKey: localStorage.getItem("userKey"),
             })
+            state.text = "";
         }
         const { ctx } = getCurrentInstance();
         let handleSelect = (key, keyPath) => {

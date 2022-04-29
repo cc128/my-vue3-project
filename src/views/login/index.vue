@@ -25,7 +25,7 @@ export default {
         })
         const { ctx } = getCurrentInstance();
         onMounted(() => {
-            console.log(ctx)
+            // console.log(ctx)
         });
         // 方法
         let fn = () => { }

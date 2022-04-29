@@ -5,7 +5,7 @@
     <router-view></router-view>
 </template>
 <script>
-import { getCurrentInstance, reactive, onMounted, computed, onBeforeUnmount } from 'vue'
+import { reactive, onMounted, computed, onBeforeUnmount, inject } from 'vue'
 import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
 export default {
     props: {
@@ -15,6 +15,13 @@ export default {
         }
     },
     setup(props, { emit, slots, attrs }) {
+        const _this = inject("G");
+        onMounted(() => {
+            _this.axios.get("/add")
+            // console.log(_this.axios, 11111)
+        });
+        // 组件销毁前
+        onBeforeUnmount(() => { })
         window.socket = io.connect("http://192.168.1.5:7005");
         let socketId;
         let nserName;
@@ -63,16 +70,10 @@ export default {
             activeIndex2: "chatRoom",
             // lowerCaseUsername: computed(() => state.username.toLowerCase()), //计算属性
         })
-        const { ctx } = getCurrentInstance();
         let handleSelect = (key, keyPath) => {
             // console.log(key, keyPath)
         }
-        onMounted(() => {
-            console.log(ctx)
-        });
-        // 组件销毁前
-        onBeforeUnmount(() => {
-        })
+
         let fn = { handleSelect }
         return { state, ...fn }
     },

@@ -28,7 +28,7 @@ export default {
         })
         const { ctx } = getCurrentInstance();
         onMounted(() => {
-            console.log(ctx)
+            // console.log(ctx)
             initThree();
         });
         // 初始化3d场景

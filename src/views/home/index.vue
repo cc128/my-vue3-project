@@ -47,7 +47,7 @@ export default {
             console.log(key, keyPath)
         }
         onMounted(() => {
-            console.log(ctx)
+            // console.log(ctx)
         });
         // 组件销毁前
         onBeforeUnmount(() => {
