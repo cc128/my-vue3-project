@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <router-view></router-view>
 </template>
@@ -17,24 +14,22 @@ export default {
     setup(props, { emit, slots, attrs }) {
         const _this = inject("G");
         onMounted(() => {
-            _this.axios.get("/add")
-            // console.log(_this.axios, 11111)
         });
         // 组件销毁前
         onBeforeUnmount(() => { })
-        window.socket = io.connect("http://192.168.1.5:7005");
+        window.socket = io.connect(`http://${location.hostname}:7005`);
         let socketId;
-        let nserName;
+        let userName;
         let userKey;
         let userList;
         //获取自己的id
         socket.on("socketId", data => {
             socketId = data.socketId;
             localStorage.setItem("socketId", socketId);
-            if (!localStorage.getItem("nserName")) {
-                localStorage.setItem("nserName", data.socketId);
+            if (!localStorage.getItem("userName")) {
+                localStorage.setItem("userName", data.socketId);
             }
-            nserName = localStorage.getItem("nserName");
+            userName = localStorage.getItem("userName");
 
             if (!localStorage.getItem("userKey")) {
                 localStorage.setItem("userKey", socketId);
@@ -61,7 +56,7 @@ export default {
         let sendLink = () => {
             socket.emit("linkUser", {
                 socketId: socketId,
-                name: nserName,
+                name: userName,
             })
         }
 

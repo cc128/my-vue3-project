@@ -5,25 +5,15 @@
 */
 <template>
     <div class="home">
-        <el-menu :default-active="state.activeIndex2" :router="true" class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" @select="handleSelect">
+        <!-- <ul class="menu-box">
+            <li>聊天室</li>
+        </ul> -->
+        <!-- <el-menu :default-active="state.activeIndex2" :router="true" class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" @select="handleSelect">
             <el-menu-item index="chatRoom" route="/chatRoom">聊天室</el-menu-item>
             <el-menu-item index="three" route="/three">模型</el-menu-item>
-            <!-- <el-sub-menu index="2">
-                <template #title>Workspace</template>
-                <el-menu-item index="2-1">item one</el-menu-item>
-                <el-menu-item index="2-2">item two</el-menu-item>
-                <el-menu-item index="2-3">item three</el-menu-item>
-                <el-sub-menu index="2-4">
-                    <template #title>item four</template>
-                    <el-menu-item index="2-4-1">item one</el-menu-item>
-                    <el-menu-item index="2-4-2">item two</el-menu-item>
-                    <el-menu-item index="2-4-3">item three</el-menu-item>
-                </el-sub-menu>
-            </el-sub-menu>
-            <el-menu-item index="3" disabled>Info</el-menu-item>
-            <el-menu-item index="4">Orders</el-menu-item> -->
-        </el-menu>
-        <router-view></router-view>
+            
+        </el-menu> -->
+        <!-- <router-view></router-view> -->
     </div>
 </template>
 
@@ -64,5 +54,11 @@ export default {
 .home {
     height: 100%;
     width: 100%;
+    .menu-box {
+        height: 60px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        padding: 0 60px;
+    }
 }
 </style>
